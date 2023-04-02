@@ -49,7 +49,7 @@ class FileServiceTest {
         englishWords =  englishWords + StringHelper.getOnlyLetter(StringHelper.removeChineseWords(result4));
 
         String html = HtmlHelper.HEADER +
-                HtmlHelper.writeBodyText("English Words", englishWords) +
+                HtmlHelper.writeBodyTextHighlight("English Words", englishWords, "o") +
                 HtmlHelper.FOOTER;
 
         fileService.write("./result-english.html", html);

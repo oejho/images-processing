@@ -20,12 +20,12 @@ public class HtmlHelper {
                "   <p style=\"color:"+color+"\">"+sentence+"</p>\n";
     }
 
-    public static String writeBodyText(String title, String sentence){
+    public static String writeBodyTextHighlight(String title, String sentence, String letter){
         StringBuilder builder = new StringBuilder();
         builder.append("   <p>").append(title).append("</p>\n");
 
         for (char c : sentence.toCharArray()) {
-            if (c == 'o' || c == 'O') {
+            if (c == letter.toLowerCase().charAt(0) || c == letter.toUpperCase().charAt(0) ) {
                 builder.append("<span style=\"color: blue;\">").append(c).append("</span>");
             } else {
                 builder.append(c);
